@@ -8,13 +8,6 @@ pipeline {
   agent any
 
   stages {
-
-    stage('Checkout Source') {
-      steps {
-        git 'https://github.com/Laxmisharma23/eks-app-deployment.git'
-      }
-    }
-
     stage('Build image') {
       steps{
         script {
