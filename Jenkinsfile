@@ -1,10 +1,4 @@
 pipeline {
-
-  environment {
-    dockerimagename = "diwazdiniz/hello-docker"
-    dockerImage = ""
-  }
-
   agent any
 
   stages {
