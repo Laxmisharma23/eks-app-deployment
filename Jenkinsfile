@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "388328004932.dkr.ecr.us-east-1.amazonaws.com/noderepo"
+    dockerimagename = "diwazdiniz/hello-docker"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
+        git 'https://github.com/Laxmisharma23/eks-app-deployment.git'
       }
     }
 
