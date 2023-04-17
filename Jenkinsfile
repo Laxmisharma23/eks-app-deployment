@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
+        git 'https://github.com/Laxmisharma23/eks-app-deployment.git'
       }
     }
 
@@ -25,11 +25,11 @@ pipeline {
 
     stage('Pushing Image') {
       environment {
-               registryCredential = 'dockerhub-credentials'
+               ECRCrediantial = 'aws-credentials'
            }
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+          docker.AmazonElasticContainerRegistry( 'https://us-east-1.console.aws.amazon.com/', ECRCrediantial ) {
             dockerImage.push("latest")
           }
         }
